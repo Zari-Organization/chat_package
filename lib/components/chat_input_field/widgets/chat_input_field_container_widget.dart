@@ -85,7 +85,8 @@ class _ChatTextViewWidgetState extends State<ChatInputFieldContainerWidget> {
           ),
           InkWell(
             onTap: () {
-              widget.attachmentClick(context);
+              //Modified By Zari Anas
+              if (!widget.isRecording) widget.attachmentClick(context);
             },
             child: Icon(
               widget.isRecording ? Icons.delete : Icons.camera_alt_outlined,
