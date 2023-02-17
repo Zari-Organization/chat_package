@@ -150,6 +150,7 @@ class _ChatScreenState extends State<ChatScreen> {
             if (widget.messages.isEmpty) {
               Container(
                 height: 500,
+                width: 150,
                 color: Colors.red,
                 child: Text("${widget.chatEmptyMessage}"),
               );
