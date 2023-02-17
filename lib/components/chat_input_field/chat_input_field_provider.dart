@@ -116,28 +116,21 @@ class ChatInputFieldProvider extends ChangeNotifier {
         handleRecord(null, true);
 
         onSlideToCancelRecord();
-
-        //Modify By anas Zari
-        _duration = 600;
-        _position = 0;
-        _isRecording = false;
-        notifyListeners();
+      } else {
+        final audioMessage = ChatMessage(
+          isSender: true,
+          chatMedia: ChatMedia(
+            url: source,
+            mediaType: MediaType.audioMediaType(),
+          ),
+        );
+        handleRecord(audioMessage, false);
       }
-      // else {
-      //   final audioMessage = ChatMessage(
-      //     isSender: true,
-      //     chatMedia: ChatMedia(
-      //       url: source,
-      //       mediaType: MediaType.audioMediaType(),
-      //     ),
-      //   );
-      //   handleRecord(audioMessage, false);
-      // }
 
-      // _duration = 600;
-      // _position = 0;
-      // _isRecording = false;
-      // notifyListeners();
+      _duration = 600;
+      _position = 0;
+      _isRecording = false;
+      notifyListeners();
     }
   }
 
