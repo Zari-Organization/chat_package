@@ -148,22 +148,27 @@ class _ChatScreenState extends State<ChatScreen> {
           itemCount: widget.messages.length,
           itemBuilder: (context, index) {
             if (widget.messages.isEmpty) {
-              Container(
-                height: 500,
-                width: 150,
-                color: Colors.red,
-                child: Text("${widget.chatEmptyMessage}"),
+              Center(
+                child: Container(
+                  height: 500,
+                  width: 150,
+                  color: Colors.red,
+                  child: Text("${widget.chatEmptyMessage}"),
+                ),
               );
             }
-            return MessageWidget(
-              message: widget.messages[index],
-              activeAudioSliderColor:
-                  widget.activeAudioSliderColor ?? kSecondaryColor,
-              inActiveAudioSliderColor:
-                  widget.inActiveAudioSliderColor ?? kLightColor,
-              senderColor: widget.senderColor ?? kPrimaryColor,
-              messageContainerTextStyle: widget.messageContainerTextStyle,
-              sendDateTextStyle: widget.sendDateTextStyle,
+            return Container(
+              color: Colors.blue,
+              child: MessageWidget(
+                message: widget.messages[index],
+                activeAudioSliderColor:
+                    widget.activeAudioSliderColor ?? kSecondaryColor,
+                inActiveAudioSliderColor:
+                    widget.inActiveAudioSliderColor ?? kLightColor,
+                senderColor: widget.senderColor ?? kPrimaryColor,
+                messageContainerTextStyle: widget.messageContainerTextStyle,
+                sendDateTextStyle: widget.sendDateTextStyle,
+              ),
             );
           },
         ),
