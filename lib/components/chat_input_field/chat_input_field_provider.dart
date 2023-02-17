@@ -116,6 +116,8 @@ class ChatInputFieldProvider extends ChangeNotifier {
         handleRecord(null, true);
 
         onSlideToCancelRecord();
+
+        //Modify By anas Zari
         _duration = 600;
         _position = 0;
         _isRecording = false;
