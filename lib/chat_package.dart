@@ -47,6 +47,10 @@ class ChatScreen extends StatefulWidget {
   /// bottom sheet
   final String imageAttachmentCancelText;
 
+  /// text shown wen Chat is empty
+  /// bottom sheet
+  final String chatEmptyMessage;
+
   /// Icon shown wen trying to chose image attachment cancel text in attachment
   /// bottom sheet
   final Icon? imageAttachmentCancelIcon;
@@ -109,6 +113,7 @@ class ChatScreen extends StatefulWidget {
     this.imageAttachmentFromGalleryText = 'From Gallery',
     this.imageAttachmentFromCameraText = 'From Camera',
     this.imageAttachmentCancelText = 'Cancel',
+    this.chatEmptyMessage = 'No Data',
     this.chatInputFieldColor = const Color(0xFFCFD8DC),
     this.imageAttachmentTextStyle,
     required this.handleRecord,
@@ -141,16 +146,23 @@ class _ChatScreenState extends State<ChatScreen> {
               left: kDefaultPadding, right: kDefaultPadding, bottom: 100),
           controller: widget.scrollController,
           itemCount: widget.messages.length,
-          itemBuilder: (context, index) => MessageWidget(
-            message: widget.messages[index],
-            activeAudioSliderColor:
-                widget.activeAudioSliderColor ?? kSecondaryColor,
-            inActiveAudioSliderColor:
-                widget.inActiveAudioSliderColor ?? kLightColor,
-            senderColor: widget.senderColor ?? kPrimaryColor,
-            messageContainerTextStyle: widget.messageContainerTextStyle,
-            sendDateTextStyle: widget.sendDateTextStyle,
-          ),
+          itemBuilder: (context, index) {
+            if (widget.messages.isEmpty) {
+              Container(
+                child: Text("${widget.chatEmptyMessage}"),
+              );
+            }
+            return MessageWidget(
+              message: widget.messages[index],
+              activeAudioSliderColor:
+                  widget.activeAudioSliderColor ?? kSecondaryColor,
+              inActiveAudioSliderColor:
+                  widget.inActiveAudioSliderColor ?? kLightColor,
+              senderColor: widget.senderColor ?? kPrimaryColor,
+              messageContainerTextStyle: widget.messageContainerTextStyle,
+              sendDateTextStyle: widget.sendDateTextStyle,
+            );
+          },
         ),
         Positioned(
           bottom: 20,
