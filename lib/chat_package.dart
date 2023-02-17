@@ -148,27 +148,35 @@ class _ChatScreenState extends State<ChatScreen> {
           itemCount: widget.messages.length,
           itemBuilder: (context, index) {
             if (widget.messages.isEmpty) {
-              Center(
-                child: Container(
-                  height: 500,
-                  width: 150,
-                  color: Colors.red,
-                  child: Text("${widget.chatEmptyMessage}"),
+              Padding(
+                padding: const EdgeInsets.only(top: kDefaultPadding),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+
+                  /// check message type and render the right widget
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                          width: MediaQuery.of(context).size.width / 2,
+                          child: Text("message")),
+                      SizedBox(
+                        height: 3,
+                      ),
+                    ],
+                  ),
                 ),
               );
             }
-            return Container(
-              color: Colors.blue,
-              child: MessageWidget(
-                message: widget.messages[index],
-                activeAudioSliderColor:
-                    widget.activeAudioSliderColor ?? kSecondaryColor,
-                inActiveAudioSliderColor:
-                    widget.inActiveAudioSliderColor ?? kLightColor,
-                senderColor: widget.senderColor ?? kPrimaryColor,
-                messageContainerTextStyle: widget.messageContainerTextStyle,
-                sendDateTextStyle: widget.sendDateTextStyle,
-              ),
+            return MessageWidget(
+              message: widget.messages[index],
+              activeAudioSliderColor:
+                  widget.activeAudioSliderColor ?? kSecondaryColor,
+              inActiveAudioSliderColor:
+                  widget.inActiveAudioSliderColor ?? kLightColor,
+              senderColor: widget.senderColor ?? kPrimaryColor,
+              messageContainerTextStyle: widget.messageContainerTextStyle,
+              sendDateTextStyle: widget.sendDateTextStyle,
             );
           },
         ),
