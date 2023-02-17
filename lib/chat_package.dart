@@ -149,6 +149,8 @@ class _ChatScreenState extends State<ChatScreen> {
           itemBuilder: (context, index) {
             if (widget.messages.isEmpty) {
               Container(
+                height: 500,
+                color: Colors.red,
                 child: Text("${widget.chatEmptyMessage}"),
               );
             }
