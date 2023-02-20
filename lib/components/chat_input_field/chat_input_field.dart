@@ -124,24 +124,21 @@ class ChatInputField extends StatelessWidget {
             padding: chatInputFieldPadding ?? EdgeInsets.only(bottom: 3),
             child: IgnorePointer(
               ignoring: disableInput,
-              child: Directionality(
-                textDirection: textDirection,
-                child: AnimatedContainer(
-                  duration: Duration(milliseconds: provider.duration),
-                  curve: Curves.ease,
-                  width: double.infinity,
-                  padding: EdgeInsets.all(3),
-                  decoration: chatInputFieldDecoration,
-                  child: Stack(
-                    alignment: AlignmentDirectional.centerStart,
-                    children: <Widget>[
-                      _buildInputField(provider),
-                      _buildDragTrail(provider),
-                      _buildAnimatedButton(provider),
-                    ],
-                  ),
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: provider.duration),
+                curve: Curves.ease,
+                width: double.infinity,
+                padding: EdgeInsets.all(3),
+                decoration: chatInputFieldDecoration,
+                child: Stack(
+                  alignment: AlignmentDirectional.centerStart,
+                  children: <Widget>[
+                    _buildInputField(provider),
+                    _buildDragTrail(provider),
+                    _buildAnimatedButton(provider),
+                  ],
                 ),
-              ),
+              )
             ),
           );
         },
