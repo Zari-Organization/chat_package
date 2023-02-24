@@ -32,8 +32,8 @@ class _AudioMessageWidgetState extends State<AudioMessageWidget> {
 
   @override
   void initState() {
-    setData();
     super.initState();
+    setData();
   }
 
   void setData() async {
