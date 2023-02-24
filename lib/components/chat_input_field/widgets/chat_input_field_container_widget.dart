@@ -78,7 +78,7 @@ class _ChatTextViewWidgetState extends State<ChatInputFieldContainerWidget> {
                         onFieldSubmitted: (_) {
                           if (widget.onSubmitted != null) widget.onSubmitted!();
                         },
-                        textDirection: TextDirection.ltr,
+                      
                       ),
               ),
             ),
