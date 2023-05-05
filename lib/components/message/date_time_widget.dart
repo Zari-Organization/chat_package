@@ -21,7 +21,8 @@ class DateTimeWidget extends StatelessWidget {
         right: kDefaultPadding / 2,
       ),
       child: Text(
-        dateStringFormatter(message.createdAt ?? DateTime.now()),
+        message.createdAt.toString(),
+        // dateStringFormatter(message.createdAt ?? DateTime.now()),
         style: sendDateTextStyle ?? TextStyle(fontSize: 12),
       ),
     );
