@@ -47,9 +47,7 @@ class ChatMessage {
           ? ChatMedia.fromMap(map['chatMedia'] as Map<String, dynamic>)
           : null,
       isSender: map['isSender'] as bool,
-      createdAt: map['createdAt'] != null
-          ? DateTime.fromMillisecondsSinceEpoch(map['createdAt'] as int)
-          : null,
+      createdAt: map['createdAt'] != null ? map['createdAt'] : null,
     );
   }
 
