@@ -15,3 +15,16 @@ String dateStringFormatter(DateTime date) {
   var dateString = format.format(date);
   return dateString;
 }
+
+String converToDatetimeTDisplay1(String date) {
+  print(date);
+  final DateFormat displayFormater = DateFormat('yyyy-MM-dd HH:mm:ss.SSS');
+  print(displayFormater);
+  final DateFormat serverFormater = DateFormat('yyyy-MM-dd HH:mm');
+  print(serverFormater);
+  final DateTime displayDate = displayFormater.parse(date);
+  print(displayDate);
+  final String formatted = serverFormater.format(displayDate);
+  print(displayDate);
+  return formatted;
+}
