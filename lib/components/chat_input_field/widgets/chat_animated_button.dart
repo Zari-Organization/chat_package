@@ -55,11 +55,14 @@ class ChatAnimatedButton extends StatelessWidget {
             ),
             child: isRecording
                 ? animatedButtonWidget
-                : Icon(
-                    isText ? sendTextIcon : Icons.mic,
-                    color: Colors.white,
-                    size: 25,
-                  ),
+                : Transform.scale(
+              scaleX: -1,
+              child:  Icon(
+                isText ? sendTextIcon : Icons.mic,
+                color: Colors.white,
+                size: 25,
+              ),
+            )
           ),
         ),
       ),
