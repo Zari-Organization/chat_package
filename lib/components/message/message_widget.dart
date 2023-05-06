@@ -48,7 +48,8 @@ class MessageWidget extends StatelessWidget {
             DateTimeWidget(
               message: message,
               sendDateTextStyle: sendDateTextStyle,
-            )
+            ),
+            Text(message.createdAt.toString())
           ],
         ),
       ),
