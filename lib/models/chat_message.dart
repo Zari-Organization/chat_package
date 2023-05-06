@@ -36,7 +36,7 @@ class ChatMessage {
       'text': text,
       'chatMedia': chatMedia?.toMap(),
       'isSender': isSender,
-      'createdAt': createdAt?.millisecondsSinceEpoch,
+      'createdAt': createdAt,
     };
   }
 
