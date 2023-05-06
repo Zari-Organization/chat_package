@@ -21,11 +21,15 @@ class DateTimeWidget extends StatelessWidget {
         right: kDefaultPadding / 2,
       ),
       child: Text(
-        message.createdAt.toString(),
         // message.createdAt.toString(),
-        // converToDatetimeTDisplay1(message.createdAt.toString().isEmpty
-        //     ? DateTime.now().toString()
-        //     : message.createdAt.toString()),
+        converToDatetimeTDisplay4(message.createdAt.toString().isEmpty
+                ? DateTime.now().toString()
+                : message.createdAt.toString()) +
+            " " +
+            convertimeDateTDisplay(message.createdAt.toString().isEmpty
+                ? DateTime.now().toString()
+                : message.createdAt.toString()) +
+            "Anas",
         style: sendDateTextStyle ?? TextStyle(fontSize: 12),
       ),
     );

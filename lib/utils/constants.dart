@@ -16,6 +16,32 @@ String dateStringFormatter(DateTime date) {
   return dateString;
 }
 
+String convertimeDateTDisplay(String date) {
+  print(date);
+  final DateFormat displayFormater = DateFormat('yyyy-MM-dd HH:mm:ss.SSS');
+  print(displayFormater);
+  final DateFormat serverFormater = DateFormat('HH:mm');
+  print(serverFormater);
+  final DateTime displayDate = displayFormater.parse(date);
+  print(displayDate);
+  final String formatted = serverFormater.format(displayDate);
+  print(displayDate);
+  return formatted;
+}
+
+String converToDatetimeTDisplay4(String date) {
+  print(date);
+  final DateFormat displayFormater = DateFormat('yyyy-MM-dd HH:mm:ss.SSS');
+  print(displayFormater);
+  final DateFormat serverFormater = DateFormat('yyyy-MM-dd');
+  print(serverFormater);
+  final DateTime displayDate = displayFormater.parse(date);
+  print(displayDate);
+  final String formatted = serverFormater.format(displayDate);
+  print(displayDate);
+  return formatted;
+}
+
 String converToDatetimeTDisplay1(String date) {
   print(date);
   final DateFormat displayFormater = DateFormat('yyyy-MM-dd HH:mm:ss.SSS');
