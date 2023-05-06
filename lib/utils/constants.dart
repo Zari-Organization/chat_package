@@ -16,6 +16,7 @@ String dateStringFormatter(DateTime date) {
   return dateString;
 }
 
+DateFormat dateFormat = DateFormat("yyyy-MM-dd HH:mm");
 String convertimeDateTDisplay(String date) {
   print(date);
   final DateFormat displayFormater = DateFormat('yyyy-MM-dd HH:mm:ss.SSS');
