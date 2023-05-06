@@ -49,8 +49,6 @@ class MessageWidget extends StatelessWidget {
               message: message,
               sendDateTextStyle: sendDateTextStyle,
             ),
-            Text(message.createdAt.toString()),
-            Text(dateFormat.format(message.createdAt ?? DateTime.now()))
           ],
         ),
       ),

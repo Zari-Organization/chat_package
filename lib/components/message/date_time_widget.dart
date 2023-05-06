@@ -21,7 +21,8 @@ class DateTimeWidget extends StatelessWidget {
         right: kDefaultPadding / 2,
       ),
       child: Text(
-        "${converToDatetimeTDisplay4(message.createdAt.toString())} ${convertimeDateTDisplay(message.createdAt.toString())}",
+        dateFormat.format(message.createdAt ?? DateTime.now()),
+        // "${converToDatetimeTDisplay4(message.createdAt.toString())} ${convertimeDateTDisplay(message.createdAt.toString())}",
         // message.createdAt.toString(),
         // converToDatetimeTDisplay4(message.createdAt.toString().isEmpty
         //         ? DateTime.now().toString()
